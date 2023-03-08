@@ -6,7 +6,7 @@ public class SharkController : MonoBehaviour
 
     public PlayerController target;
     public float speed = 10f;   // The speed at which the shark moves
-    public float attackRange = 10f;  // The range at which the shark will attack
+    public float attackRange = 3f;  // The range at which the shark will attack
     public float attackDamage = 10f;  // The amount of damage the shark will inflict on the ship
     private float life = 20f;
     private Rigidbody2D rb;
@@ -32,6 +32,7 @@ public class SharkController : MonoBehaviour
             {
                 isAttacking = true;
                 Attack();
+                isAttacking = false;
             }
             else
             {
@@ -54,6 +55,7 @@ public class SharkController : MonoBehaviour
     {
         // TODO: Implement the attack behavior here, e.g. play an attack animation, deal damage to the ship, etc.
         Debug.Log("Shark is attacking the ship!");
+        target.TakeDamage(attackDamage);
     }
 
     // This method is called when the shark collides with the ship
@@ -73,7 +75,9 @@ public class SharkController : MonoBehaviour
     {
         life -= attackDamage;
         if (life <= 0) {
-            //TODO: Shark is dead and disappears
+            //Shark is dead and disappears
+            Destroy(gameObject);
+            Debug.Log("Shark has been destroyed");
         }
     }
 }

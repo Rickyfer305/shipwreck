@@ -32,6 +32,7 @@ public class PirateController : MonoBehaviour
             {
                 isAttacking = true;
                 Attack();
+                isAttacking = false;
             }
             else
             {
@@ -66,7 +67,9 @@ public class PirateController : MonoBehaviour
     {
         life -= attackDamage;
         if (life <= 0) {
-            //TODO: Pirate Ship is dead and disappears
+            //Pirate Ship is dead and disappears
+            Destroy(gameObject);
+            Debug.Log("Pirate has been destroyed");
         }
     }
 }

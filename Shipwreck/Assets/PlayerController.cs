@@ -5,12 +5,14 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float life = 100f;
     public WeaponController weaponController;
+    private GameManager gameManager;
 
     private Rigidbody2D rb2d;
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void FixedUpdate()
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviour
         life -= damage;
         if (life <= 0) {
             //TODO: GAME OVER
+            Debug.Log("GAME OVER");
+            gameManager.GameOver();
         } 
     }
 }
