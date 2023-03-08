@@ -30,4 +30,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = originalTimeScale;
         SceneManager.LoadScene("beta");
     }
+
+    public void BackToMenu()
+    {
+        Debug.Log("Back to the menu");
+        Time.timeScale = originalTimeScale;
+        SceneManager.LoadScene("MainMenu");
+    }
 }

@@ -984,7 +984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5325699494857807853, guid: 72e4f6d2a87172f46948baff398ee7a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5325699494857807853, guid: 72e4f6d2a87172f46948baff398ee7a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -996,15 +996,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5325699494857807853, guid: 72e4f6d2a87172f46948baff398ee7a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: BackToMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5325699494857807853, guid: 72e4f6d2a87172f46948baff398ee7a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LoadSceneOnClick, Assembly-CSharp
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5325699494857807853, guid: 72e4f6d2a87172f46948baff398ee7a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: MainMenu
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5325699494857807853, guid: 72e4f6d2a87172f46948baff398ee7a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1092,9 +1092,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5041457356365523131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72a0248ce82be7a40b766481fa7cbd97, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f570c78887f661418b5dd5684131bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 0}
 --- !u!1 &5041457357074879028 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5325699493888404836, guid: 72e4f6d2a87172f46948baff398ee7a3, type: 3}
