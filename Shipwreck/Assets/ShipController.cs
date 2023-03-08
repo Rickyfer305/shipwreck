@@ -8,12 +8,13 @@ public class ShipController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float bulletSpeed = 20f;
-
+    public float life = 100f;
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        tag = "Ship";
         transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
 
     }
@@ -41,6 +42,14 @@ public class ShipController : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
             bulletRb.velocity = shootDirection * bulletSpeed;
+        }
+    }
+
+    public void TakeDamage(float attackDamage)
+    {
+        life -= attackDamage;
+        if (life <= 0) {
+            //TODO: Ship is dead and the game is over
         }
     }
 }

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class BulletController : MonoBehaviour
 {
     public float speed = 10f; // Speed of the bullet
@@ -23,8 +25,9 @@ public class BulletController : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             // Deal damage to the enemy
-            other.GetComponent<EnemyController>().TakeDamage(damage);
-
+            // TODO: Implement the attack behavior here
+            //other.GetComponent<EnemyController>().TakeDamage(damage);
+            Debug.Log("Ship is being attacked!");
             // Destroy the bullet on impact
             Destroy(gameObject);
         }
