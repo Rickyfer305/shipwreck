@@ -4,7 +4,7 @@ public class SharkController : MonoBehaviour
 {
     // public Transform target;    // The target object (your ship)
 
-    public ShipController target;
+    public PlayerController target;
     public float speed = 10f;   // The speed at which the shark moves
     public float attackRange = 10f;  // The range at which the shark will attack
     public float attackDamage = 10f;  // The amount of damage the shark will inflict on the ship

@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
+    public float life = 100f;
     public WeaponController weaponController;
 
     private Rigidbody2D rb2d;
@@ -28,6 +29,14 @@ public class PlayerController : MonoBehaviour
         {
             weaponController.Fire();
         }
+    }
+
+    public void TakeDamage(float damage) 
+    {
+        life -= damage;
+        if (life <= 0) {
+            //TODO: GAME OVER
+        } 
     }
 }
 
