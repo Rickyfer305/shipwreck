@@ -18,7 +18,12 @@ public class HealthBar : MonoBehaviour
 
     public void SetHealth(float health)
 	{
-		slider.value = health;
+		if (health == null) {
+			Debug.Log("Null health");
+		}
+		else {
+			slider.value = health;
+		}
 	}
 
 }
