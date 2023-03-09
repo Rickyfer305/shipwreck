@@ -16,9 +16,6 @@ public class Cannon : Weapon
     // The prefab to use for bullets fired from this weapon
     public GameObject bulletPrefab;
 
-    // The position where bullets should spawn when fired from this weapon
-    public Transform firePoint;
-
     // The time until the next shot can be fired
     private float nextFireTime = 0f;
 
