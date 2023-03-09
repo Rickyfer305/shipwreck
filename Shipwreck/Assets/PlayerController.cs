@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float life = 100f;
     public WeaponController weaponController;
+    public HealthBar healthController;
     private GameManager gameManager;
     public int coins = 0;
 
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
         tag = "Player";
         rb2d = GetComponent<Rigidbody2D>();
         gameManager = FindObjectOfType<GameManager>();
+        healthController.SetMaxHealth(life);
     }
 
     private void FixedUpdate()
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage) 
     {
         life -= damage;
+        healthController.SetHealth(life);
         if (life <= 0) {
             //TODO: GAME OVER
             Debug.Log("GAME OVER");
