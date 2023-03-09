@@ -3,6 +3,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 
     public float fireRate;
+    public Transform firePoint;
     public float damage;
     public Sprite sprite;
 
