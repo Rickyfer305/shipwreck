@@ -17,6 +17,7 @@ public class SharkController : MonoBehaviour
     private void Start()
     {
         // Get the Rigidbody2D component attached to the shark object
+        tag = "Shark";
         rb = GetComponent<Rigidbody2D>();
     }
 

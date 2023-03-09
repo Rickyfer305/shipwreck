@@ -18,13 +18,16 @@ public class Bullet : MonoBehaviour
     // Handle collisions with other objects
     void OnTriggerEnter(Collider other)
     {
-        // // Check if the other object has a Health component
-        // Health health = other.GetComponent<Health>();
-        // if (health != null)
-        // {
-        //     // Deal damage to the other object's health
-        //     health.TakeDamage(damage);
-        // }
+
+        if (other.tag == "Shark") {
+            SharkController enemy = other.GetComponent<SharkController>();
+            enemy.TakeDamage(damage);
+
+        }
+        else if (other.tag == "Pirate") {
+            PirateController enemy = other.GetComponent<PirateController>();
+            enemy.TakeDamage(damage);
+        }
 
         // Destroy the bullet object
         Destroy(gameObject);
