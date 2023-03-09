@@ -8,9 +8,10 @@ public class PirateController : MonoBehaviour
     public float speed = 1f;   // The speed at which the shark moves
     public float attackRange = 10f;  // The range at which the shark will attack
     public float attackDamage = 10f;  // The amount of damage the shark will inflict on the ship
-    private float life = 50f;
+    public float life = 50f;
     private Rigidbody2D rb;
     private Vector2 movement;
+    public GameObject coin;
 
     private bool isAttacking = false;  // Flag to indicate whether the shark is currently attacking
 
@@ -68,6 +69,10 @@ public class PirateController : MonoBehaviour
         life -= attackDamage;
         if (life <= 0) {
             //Pirate Ship is dead and disappears
+            //Leaves a coin where it was
+            // Spawn a coin
+            Instantiate(coin, transform.position, Quaternion.identity);
+
             Destroy(gameObject);
             Debug.Log("Pirate has been destroyed");
         }

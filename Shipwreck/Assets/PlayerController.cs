@@ -6,11 +6,13 @@ public class PlayerController : MonoBehaviour
     public float life = 100f;
     public WeaponController weaponController;
     private GameManager gameManager;
+    public int coins = 0;
 
     private Rigidbody2D rb2d;
 
     private void Start()
     {
+        tag = "Player";
         rb2d = GetComponent<Rigidbody2D>();
         gameManager = FindObjectOfType<GameManager>();
     }
@@ -41,6 +43,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log("GAME OVER");
             gameManager.GameOver();
         } 
+    }
+
+    public void RecollectCoin()
+    {
+        coins++;
     }
 }
 
