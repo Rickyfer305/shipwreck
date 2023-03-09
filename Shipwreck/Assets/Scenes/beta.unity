@@ -1590,6 +1590,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1215514352}
     m_Modifications:
+    - target: {fileID: 9061738960038745718, guid: 4ca16cd7b1d2fc645b3bfa0ff56f9cdf, type: 3}
+      propertyPath: fill
+      value: 
+      objectReference: {fileID: 1026142928}
+    - target: {fileID: 9061738960038745718, guid: 4ca16cd7b1d2fc645b3bfa0ff56f9cdf, type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 1523663081}
     - target: {fileID: 9061738960695698515, guid: 4ca16cd7b1d2fc645b3bfa0ff56f9cdf, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
