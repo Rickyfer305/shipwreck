@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour
         tag = "Player";
         rb2d = GetComponent<Rigidbody2D>();
         gameManager = FindObjectOfType<GameManager>();
-        healthController.SetMaxHealth(life);
+        if (healthController != null){
+            healthController.SetMaxHealth(life);
+        }
     }
 
     private void FixedUpdate()
@@ -40,7 +42,9 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage) 
     {
         life -= damage;
-        healthController.SetHealth(life);
+        if (healthController != null){
+            healthController.SetHealth(life);
+        }
         if (life <= 0) {
             //TODO: GAME OVER
             Debug.Log("GAME OVER");
