@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour {
     public float damage;
     public Sprite sprite;
 
-    public virtual void Fire() {
+    public virtual void Fire(Vector2 direction) {
         // Code for shooting the weapon
     }
 

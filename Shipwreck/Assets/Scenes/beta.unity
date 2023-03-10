@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 520271634}
   - component: {fileID: 520271633}
   - component: {fileID: 520271637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ship_light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,6 +518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SharkV1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5687208375772561379, guid: a7f7e3f17bdb76345af8092fbedc7991, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f7e3f17bdb76345af8092fbedc7991, type: 3}
 --- !u!1 &594593270 stripped
@@ -584,6 +588,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -1335627274117880640, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ad962cfe82bf0e4ea1b760bec57dfb9, type: 3}
+    - target: {fileID: -1335627274117880640, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
       propertyPath: fireRate
       value: 1
       objectReference: {fileID: 0}
@@ -593,19 +601,19 @@ PrefabInstance:
       objectReference: {fileID: 1131455109}
     - target: {fileID: 1496074572293809282, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1496074572293809282, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.031
       objectReference: {fileID: 0}
     - target: {fileID: 1496074572293809282, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.536
       objectReference: {fileID: 0}
     - target: {fileID: 1496074572293809282, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1496074572293809282, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -989,7 +997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1767638402}
   - component: {fileID: 1767638403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,15 +1122,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5685522718570489850, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 5685522718570489850, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0621
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 5685522718570489850, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5685522718570489850, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
       propertyPath: m_LocalRotation.w

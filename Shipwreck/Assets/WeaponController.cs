@@ -30,11 +30,6 @@ public class WeaponController : MonoBehaviour
         }
         // Add more key codes for additional weapons as desired
 
-        // Check for fire input
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Fire();
-        }
     }
 
     // Select a weapon by index
@@ -54,10 +49,10 @@ public class WeaponController : MonoBehaviour
     }
 
     // Fire the currently selected weapon
-    public void Fire()
+    public void Fire(Vector2 direction)
     {
         // Call the Fire() method of the selected weapon
-        weapons[selectedWeaponIndex].Fire();
+        weapons[selectedWeaponIndex].Fire(direction);
     }
 }
 

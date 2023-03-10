@@ -12,7 +12,9 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         // Move the bullet forward based on its speed and the elapsed time
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        // transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.position += transform.forward * speed * Time.deltaTime;
+        Debug.Log("Bullet position: " + transform.position);
     }
 
     // Handle collisions with other objects

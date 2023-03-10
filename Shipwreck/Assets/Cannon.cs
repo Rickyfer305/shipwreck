@@ -20,7 +20,7 @@ public class Cannon : Weapon
     private float nextFireTime = 0f;
 
     // Fire the weapon
-    public override void Fire()
+    public override void Fire(Vector2 direction)
     {
         // Check if enough time has passed since the last shot
         if (Time.time > nextFireTime)
@@ -29,9 +29,12 @@ public class Cannon : Weapon
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
             // Set the bullet's speed and damage based on the weapon's properties
-            Bullet bulletComponent = bullet.GetComponent<Bullet>();
-            bulletComponent.speed = bulletSpeed;
-            bulletComponent.damage = damage;
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 fireDirection = (mousePosition - (Vector2)firePoint.position).normalized;
+            bullet.GetComponent<Rigidbody2D>().velocity = fireDirection * bulletSpeed;
+
+
+            bullet.GetComponent<Bullet>().damage = damage;
 
             // Set the next available time for firing
             nextFireTime = Time.time + fireRate;

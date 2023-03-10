@@ -21,7 +21,7 @@ public class Harpoon : Weapon
     private float nextFireTime = 0f;
 
     // Fire the weapon
-    public override void Fire()
+    public override void Fire(Vector2 direction)
     {
         // Check if enough time has passed since the last shot
         if (Time.time > nextFireTime)
@@ -31,7 +31,7 @@ public class Harpoon : Weapon
 
             // Set the bullet's speed and damage based on the weapon's properties
             Bullet bulletComponent = bullet.GetComponent<Bullet>();
-            bulletComponent.speed = bulletSpeed;
+            bulletComponent.speed = bulletSpeed*direction.normalized.magnitude;
             bulletComponent.damage = damage;
 
             // Set the next available time for firing

@@ -35,7 +35,13 @@ public class PlayerController : MonoBehaviour
         // Fire the weapon when the player presses the fire button
         if (Input.GetButton("Fire1"))
         {
-            weaponController.Fire();
+            // Get the mouse position in world space
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0f;
+
+            // Get the direction from the player's position to the mouse position
+            Vector2 direction = mousePosition - transform.position;
+            weaponController.Fire(direction);
         }
     }
 
