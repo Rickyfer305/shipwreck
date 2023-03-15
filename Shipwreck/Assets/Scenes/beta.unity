@@ -483,31 +483,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9061738960695698508, guid: 4ca16cd7b1d2fc645b3bfa0ff56f9cdf, type: 3}
   m_PrefabInstance: {fileID: 9061738961016985244}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 947387245}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &947387245
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947387244}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 0.45, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 343948780}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1079935756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -612,12 +593,6 @@ Transform:
   m_Father: {fileID: 1996623623}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1215514350
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +681,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 88885882}
+  - {fileID: 2134180438}
+  - {fileID: 1996623623}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -776,11 +753,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0
+  firePoint: {fileID: 0}
   damage: 0
   sprite: {fileID: 0}
   bulletSpeed: 20
   bulletPrefab: {fileID: 0}
-  firePoint: {fileID: 0}
 --- !u!114 &1215514357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,11 +771,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0
+  firePoint: {fileID: 0}
   damage: 0
   sprite: {fileID: 0}
   bulletSpeed: 10
   bulletPrefab: {fileID: 0}
-  firePoint: {fileID: 0}
 --- !u!114 &1215514358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,17 +1037,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1996623622 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -1335627274117880640, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
-  m_PrefabInstance: {fileID: 1079935756}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06cdd0d2ab9193245ac43508523cb4a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1996623623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1496074572293809282, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
@@ -1094,7 +1060,7 @@ PrefabInstance:
     - target: {fileID: -7042910453094445763, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
       propertyPath: firePoint
       value: 
-      objectReference: {fileID: 947387245}
+      objectReference: {fileID: 0}
     - target: {fileID: 5685522718570489850, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1149,6 +1115,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
+--- !u!4 &2134180438 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5685522718570489850, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
+  m_PrefabInstance: {fileID: 2134180437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &873264812887932752
 PrefabInstance:
   m_ObjectHideFlags: 0

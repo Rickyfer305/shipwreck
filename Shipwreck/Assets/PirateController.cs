@@ -18,7 +18,7 @@ public class PirateController : MonoBehaviour
     private void Start()
     {
         // Get the Rigidbody2D component attached to the shark object
-        gameObject.tag = "Pirate";
+        tag = "Pirate";
         rb = GetComponent<Rigidbody2D>();
     }
 

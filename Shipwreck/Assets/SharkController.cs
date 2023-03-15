@@ -11,29 +11,27 @@ public class SharkController : MonoBehaviour
     private float life = 20f;
     private Rigidbody2D rb;
     private Vector2 movement;
-
-    private bool isAttacking = false;  // Flag to indicate whether the shark is currently attacking
+    private float nextAttackTime = 0f;
+    public float reloadAttackTime = 10f;
 
     private void Start()
     {
         // Get the Rigidbody2D component attached to the shark object
-        gameObject.tag = "Shark";
+        tag = "Shark";
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        if (target != null && !isAttacking)
+        if (target != null)
         {
             // Calculate the distance between the shark and the target
             float distance = Vector2.Distance(transform.position, target.transform.position);
 
             // If the target is within attack range, start attacking
-            if (distance <= attackRange)
+            if (distance <= attackRange && nextAttackTime < Time.time)
             {
-                isAttacking = true;
                 Attack();
-                isAttacking = false;
             }
             else
             {
@@ -56,13 +54,14 @@ public class SharkController : MonoBehaviour
     {
         // TODO: Implement the attack behavior here, e.g. play an attack animation, deal damage to the ship, etc.
         Debug.Log("Shark is attacking the ship!");
+        nextAttackTime = Time.time + reloadAttackTime;
         target.TakeDamage(attackDamage);
     }
 
     // This method is called when the shark collides with the ship
     private void OnTriggerEnter(Collider other)
     {
-        if (isAttacking && other.tag == "Ship")
+        if (other.tag == "Ship")
         {
             // Deal damage to the ship
             //other.GetComponent<ShipHealth>().TakeDamage(attackDamage);
