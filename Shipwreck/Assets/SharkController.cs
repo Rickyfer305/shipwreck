@@ -4,20 +4,22 @@ public class SharkController : MonoBehaviour
 {
     // public Transform target;    // The target object (your ship)
 
-    public PlayerController target;
+    private PlayerController target;
     public float speed = 10f;   // The speed at which the shark moves
     public float attackRange = 3f;  // The range at which the shark will attack
     public float attackDamage = 10f;  // The amount of damage the shark will inflict on the ship
-    private float life = 20f;
+    public float life = 20f;
     private Rigidbody2D rb;
     private Vector2 movement;
     private float nextAttackTime = 0f;
     public float reloadAttackTime = 10f;
+    public GameObject coin;
 
     private void Start()
     {
         // Get the Rigidbody2D component attached to the shark object
         tag = "Shark";
+        target = FindObjectOfType<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -53,7 +55,7 @@ public class SharkController : MonoBehaviour
     private void Attack()
     {
         // TODO: Implement the attack behavior here, e.g. play an attack animation, deal damage to the ship, etc.
-        Debug.Log("Shark is attacking the ship!");
+        // Debug.Log("Shark is attacking the ship!");
         nextAttackTime = Time.time + reloadAttackTime;
         target.TakeDamage(attackDamage);
     }
@@ -69,14 +71,20 @@ public class SharkController : MonoBehaviour
             // TODO: Implement the attack behavior here, e.g. play an attack animation, deal damage to the ship, etc.
             Debug.Log("Shark is attacking the ship!");
         }
+        // else if (other.tag == "Bullet") {
+        //     life -= 5f;
+        //     Debug.Log("Shark has been hit");
+        // }
     }
 
     public void TakeDamage(float attackDamage)
     {
         life -= attackDamage;
+        Debug.Log("Shark shot: " + attackDamage.ToString());
         if (life <= 0) {
             //Shark is dead and disappears
             Destroy(gameObject);
+            Instantiate(coin, transform.position, Quaternion.identity);
             Debug.Log("Shark has been destroyed");
         }
     }

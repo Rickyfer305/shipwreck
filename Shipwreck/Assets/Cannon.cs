@@ -34,7 +34,7 @@ public class Cannon : Weapon
             bullet.GetComponent<Rigidbody2D>().velocity = fireDirection * bulletSpeed;
 
 
-            bullet.GetComponent<Bullet>().damage = damage;
+            // bullet.GetComponent<Bullet>().damage = damage;
 
             // Set the next available time for firing
             nextFireTime = Time.time + fireRate;

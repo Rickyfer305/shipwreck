@@ -56,7 +56,7 @@ public class PirateController : MonoBehaviour
     private void Attack()
     {
         // TODO: Implement the attack behavior here, e.g. play an attack animation, deal damage to the ship, etc.
-        Debug.Log("Pirates are attacking the ship!");
+        // Debug.Log("Pirates are attacking the ship!");
     }
 
     // This method is called when the shark collides with the ship

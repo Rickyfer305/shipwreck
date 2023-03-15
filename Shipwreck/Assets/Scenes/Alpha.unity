@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5687208375772561379, guid: a7f7e3f17bdb76345af8092fbedc7991, type: 3}
+      propertyPath: m_TagString
+      value: Shark
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f7e3f17bdb76345af8092fbedc7991, type: 3}
 --- !u!4 &352858316 stripped
@@ -216,7 +220,7 @@ GameObject:
   - component: {fileID: 366518851}
   m_Layer: 6
   m_Name: Pirates
-  m_TagString: Untagged
+  m_TagString: Pirate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1127,6 +1131,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1496074572293809282, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
   m_PrefabInstance: {fileID: 1332235297}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1398045379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1398045380}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1398045380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398045379}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.06, y: 1.08, z: -2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1858598031}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1542498326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1577,11 +1612,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 1398045380}
   damage: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 6ad962cfe82bf0e4ea1b760bec57dfb9, type: 3}
   bulletSpeed: 20
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 8377146375214695567, guid: 1e3770f6b21e6ad4b9117356da2e30f4, type: 3}
 --- !u!114 &1858598025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,7 +1630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 1398045380}
   damage: 0
   sprite: {fileID: 0}
   bulletSpeed: 10
@@ -1607,7 +1642,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858598023}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e857f62176b55d4d8124e799652bb97, type: 3}
   m_Name: 
@@ -1737,6 +1772,7 @@ Transform:
   - {fileID: 1306972257}
   - {fileID: 2105340238}
   - {fileID: 1332235298}
+  - {fileID: 1398045380}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1868,7 +1904,7 @@ PrefabInstance:
     - target: {fileID: -7042910453094445763, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
       propertyPath: firePoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1398045380}
     - target: {fileID: 5685522718570489850, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
       propertyPath: m_RootOrder
       value: 1
