@@ -36,7 +36,7 @@ public class SharkGenerator : MonoBehaviour {
             xPos += player.transform.position.x;
             yPos += player.transform.position.y;
             Instantiate(enemy, new Vector3(xPos, yPos, 0), Quaternion.identity);
-            Debug.Log("Shark spawned at: (" + xPos + "," + yPos + ")");
+            // Debug.Log("Shark spawned at: (" + xPos + "," + yPos + ")");
             yield return new WaitForSeconds(spawnTime);
             sharkCount += 1;
         }

@@ -36,7 +36,7 @@ public class PirateGenerator : MonoBehaviour {
             xPos += player.transform.position.x;
             yPos += player.transform.position.y;
             Instantiate(enemy, new Vector3(xPos, yPos, 0), Quaternion.identity);
-            Debug.Log("Pirate spawned at: (" + xPos + "," + yPos + ")");
+            // Debug.Log("Pirate spawned at: (" + xPos + "," + yPos + ")");
             yield return new WaitForSeconds(spawnTime);
             pirateCount += 1;
         }

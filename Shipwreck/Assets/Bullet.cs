@@ -30,7 +30,6 @@ public class Bullet : MonoBehaviour
             // Debug.Log("Shark has been shot");
             SharkController enemy = collision.GetComponent<SharkController>();
             enemy.TakeDamage(damage);
-            Destroy(gameObject);
 
         }
         else if (other.tag == "Pirate")
@@ -38,7 +37,12 @@ public class Bullet : MonoBehaviour
             // Debug.Log("Pirate has been shot");
             PirateController enemy = other.GetComponent<PirateController>();
             enemy.TakeDamage(damage);
-            Destroy(gameObject);
+        }
+        else if (other.tag == "Player")
+        {
+            Debug.Log("Player has been shot");
+            PlayerController enemy = other.GetComponent<PlayerController>();
+            enemy.TakeDamage(damage);
         }
 
         // Destroy the bullet object

@@ -283,6 +283,7 @@ MonoBehaviour:
   life: 20
   reloadAttackTime: 10
   coin: {fileID: 1167022493603071620, guid: be978c4172ded7c458cbd95cde617b14, type: 3}
+  blood: {fileID: 8157146430676528004, guid: f24aa4baff70f714ebb4084632ec477f, type: 3}
 --- !u!4 &1752461882463535836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ca38d4485fce19f4aa0d3d7bdd8b6cf2, type: 3}

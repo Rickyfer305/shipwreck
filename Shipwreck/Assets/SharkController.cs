@@ -14,6 +14,7 @@ public class SharkController : MonoBehaviour
     private float nextAttackTime = 0f;
     public float reloadAttackTime = 10f;
     public GameObject coin;
+    public GameObject blood;
 
     private void Start()
     {
@@ -80,6 +81,7 @@ public class SharkController : MonoBehaviour
     public void TakeDamage(float attackDamage)
     {
         life -= attackDamage;
+        Instantiate(blood, transform.position, Quaternion.identity);
         Debug.Log("Shark shot: " + attackDamage.ToString());
         if (life <= 0) {
             //Shark is dead and disappears
