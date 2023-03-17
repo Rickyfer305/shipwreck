@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 10f;
     public float drag = 1f;
 
+    public GameObject explosion;
+
     private Rigidbody2D rb2d;
 
     private void Start()
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         life -= damage;
+        Instantiate(explosion, transform.position, Quaternion.identity);
         if (healthController != null)
         {
             healthController.SetHealth(life);

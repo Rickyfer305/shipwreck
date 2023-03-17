@@ -4,7 +4,7 @@ public class Harpoon : Weapon
 {
     private void Start(){
         // The amount of damage this weapon does
-        damage = 5f;
+        damage = 15f;
 
         // The time between shots when firing this weapon
         fireRate = 1f;
@@ -29,9 +29,12 @@ public class Harpoon : Weapon
             // Instantiate a new bullet prefab at the fire point
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 fireDirection = (mousePosition - (Vector2)firePoint.position).normalized;
+            bullet.GetComponent<Rigidbody2D>().velocity = fireDirection * bulletSpeed;
             // Set the bullet's speed and damage based on the weapon's properties
             Bullet bulletComponent = bullet.GetComponent<Bullet>();
-            bulletComponent.speed = bulletSpeed*direction.normalized.magnitude;
+            // bulletComponent.speed = bulletSpeed*direction.normalized.magnitude;
             bulletComponent.damage = damage;
 
             // Set the next available time for firing

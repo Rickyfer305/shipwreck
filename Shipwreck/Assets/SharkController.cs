@@ -5,14 +5,14 @@ public class SharkController : MonoBehaviour
     // public Transform target;    // The target object (your ship)
 
     private PlayerController target;
-    public float speed = 10f;   // The speed at which the shark moves
-    public float attackRange = 3f;  // The range at which the shark will attack
-    public float attackDamage = 10f;  // The amount of damage the shark will inflict on the ship
+    private float speed = 10f;   // The speed at which the shark moves
+    private float attackRange = 2f;  // The range at which the shark will attack
+    private float attackDamage = 20f;  // The amount of damage the shark will inflict on the ship
     public float life = 20f;
     private Rigidbody2D rb;
     private Vector2 movement;
     private float nextAttackTime = 0f;
-    public float reloadAttackTime = 10f;
+    private float reloadAttackTime = 5f;
     public GameObject coin;
     public GameObject blood;
 
@@ -67,15 +67,11 @@ public class SharkController : MonoBehaviour
         if (other.tag == "Ship")
         {
             // Deal damage to the ship
-            //other.GetComponent<ShipHealth>().TakeDamage(attackDamage);
-            target.TakeDamage(attackDamage);
-            // TODO: Implement the attack behavior here, e.g. play an attack animation, deal damage to the ship, etc.
-            Debug.Log("Shark is attacking the ship!");
+            if (nextAttackTime < Time.time)
+            {
+                Attack();
+            }
         }
-        // else if (other.tag == "Bullet") {
-        //     life -= 5f;
-        //     Debug.Log("Shark has been hit");
-        // }
     }
 
     public void TakeDamage(float attackDamage)

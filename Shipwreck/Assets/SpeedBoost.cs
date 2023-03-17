@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class SpeedBoost : MonoBehaviour
 {
-    public float boostCooldownTime = 10f;
-    public float boostActiveTime = 5f;
+    private float boostCooldownTime = 10f;
+    private float boostActiveTime = 5f;
     private float boostedSpeed = 10f;
     private PlayerController player;
     private KeyCode boostKey = KeyCode.Space;

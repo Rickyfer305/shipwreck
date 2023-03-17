@@ -5,10 +5,10 @@ public class PirateController : MonoBehaviour
     // public Transform target;    // The target object (your ship)
 
     private PlayerController target;
-    public float speed = 1f;   // The speed at which the shark moves
-    public float attackRange = 10f;  // The range at which the shark will attack
-    public float attackDamage = 10f;  // The amount of damage the shark will inflict on the ship
-    public float life = 50f;
+    private float speed = 1f;   // The speed at which the shark moves
+    private float attackRange = 10f;  // The range at which the shark will attack
+    private float attackDamage = 10f;  // The amount of damage the shark will inflict on the ship
+    private float life = 50f;
     private Rigidbody2D rb;
     private Vector2 movement;
     private float nextAttackTime = 0f;
