@@ -6,10 +6,14 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverScreen;
     private bool isGameOver;
     private float originalTimeScale;
+    private PlayerController player;
+    // public GameObject _kills;
+    // public GameObject _coins;
 
     private void Start()
     {
         isGameOver = false;
+        player = GetComponent<PlayerController>();
         originalTimeScale = Time.timeScale;
     }
 
@@ -19,6 +23,8 @@ public class GameManager : MonoBehaviour
         {
             isGameOver = true;
             // Show the game over screen
+            // _kills.text = player.kills + " KILLS";
+            // _coins.text = player.coins + " KILLS";
             gameOverScreen.SetActive(true);
             Time.timeScale = 0;
         }

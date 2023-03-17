@@ -18,6 +18,7 @@ public class SpeedBoost : MonoBehaviour
     public void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        // boostIcon = GetComponent<Image>();
         //SpeedBoost starts to load
         StartCoroutine(BoostCoroutineLoad());
     }
@@ -34,20 +35,20 @@ public class SpeedBoost : MonoBehaviour
     {
         isBoostOnCooldown = true;
         //Show that boost is loading
-        boostIcon.material.color = new Color(0,0,0);
+        boostIcon.material.color = Color.grey;
 
         yield return new WaitForSeconds(boostCooldownTime);
         
         isBoostOnCooldown = false;
         //Action to show that the boost is available
-        boostIcon.material.color = new Color(0,0,255);
+        boostIcon.material.color = Color.cyan;
 
     }
 
     // Activate the boost -> Set the new speed
     IEnumerator BoostCoroutineAction() {
         // Show that boost is active
-        boostIcon.material.color = new Color(255,0,0);
+        boostIcon.material.color = Color.red;
         boostIsActive = true;
         originalSpeed = player.speed;
         player.speed = boostedSpeed;

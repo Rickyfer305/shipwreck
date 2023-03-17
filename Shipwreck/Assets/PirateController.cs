@@ -85,6 +85,7 @@ public class PirateController : MonoBehaviour
         Debug.Log("Pirate shot: " + attackDamage.ToString());
         if (life <= 0) {
             //Pirate Ship is dead and disappears
+            target.AddKill();
             Destroy(gameObject);
             Instantiate(coin, transform.position, Quaternion.identity);
             Debug.Log("Pirate has been destroyed");

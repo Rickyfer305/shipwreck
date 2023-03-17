@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthController;
     private GameManager gameManager;
     public int coins = 0;
+    public int kills = 0;
 
     private Rigidbody2D rb2d;
 
@@ -61,6 +62,11 @@ public class PlayerController : MonoBehaviour
     public void RecollectCoin()
     {
         coins++;
+    }
+
+    public void AddKill()
+    {
+        kills++;
     }
 }
 

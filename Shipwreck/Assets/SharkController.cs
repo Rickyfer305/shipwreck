@@ -85,6 +85,7 @@ public class SharkController : MonoBehaviour
         Debug.Log("Shark shot: " + attackDamage.ToString());
         if (life <= 0) {
             //Shark is dead and disappears
+            target.AddKill();
             Destroy(gameObject);
             Instantiate(coin, transform.position, Quaternion.identity);
             Debug.Log("Shark has been destroyed");
