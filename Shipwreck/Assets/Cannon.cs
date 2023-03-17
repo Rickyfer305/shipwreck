@@ -19,6 +19,21 @@ public class Cannon : Weapon
     // The time until the next shot can be fired
     private float nextFireTime = 0f;
 
+    private void Update()
+    {
+        // Get the position of the mouse in world space
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Calculate the direction from the fire point to the mouse position
+        Vector2 direction = (mousePosition - firePoint.position).normalized;
+
+        // Calculate the angle between the fire point's current up direction and the direction to the mouse
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Apply the calculated rotation to the weapon
+        transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+    }
+
     // Fire the weapon
     public override void Fire(Vector2 direction)
     {

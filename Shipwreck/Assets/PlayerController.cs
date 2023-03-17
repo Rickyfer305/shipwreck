@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     public int coins = 0;
     public int kills = 0;
 
+    public float turnSpeed = 10f;
+    public float drag = 1f;
+
     private Rigidbody2D rb2d;
 
     private void Start()
@@ -17,46 +20,53 @@ public class PlayerController : MonoBehaviour
         tag = "Player";
         rb2d = GetComponent<Rigidbody2D>();
         gameManager = FindObjectOfType<GameManager>();
-        if (healthController != null){
+        if (healthController != null)
+        {
             healthController.SetMaxHealth(life);
         }
     }
 
     private void FixedUpdate()
     {
-        // Move the player using keyboard input
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rb2d.velocity = movement * speed;
+
+        rb2d.velocity *= (1 - Time.deltaTime * drag);
+        rb2d.velocity += movement * speed * Time.deltaTime;
+
+        if (movement.magnitude > 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+            targetAngle += 90f; // 90-degree offset to face forward
+            float currentAngle = Mathf.LerpAngle(transform.eulerAngles.z, targetAngle, Time.deltaTime * turnSpeed);
+            transform.eulerAngles = new Vector3(0, 0, currentAngle);
+        }
     }
 
     private void Update()
     {
-        // Fire the weapon when the player presses the fire button
         if (Input.GetButton("Fire1"))
         {
-            // Get the mouse position in world space
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0f;
-
-            // Get the direction from the player's position to the mouse position
             Vector2 direction = mousePosition - transform.position;
             weaponController.Fire(direction);
         }
     }
 
-    public void TakeDamage(float damage) 
+    public void TakeDamage(float damage)
     {
         life -= damage;
-        if (healthController != null){
+        if (healthController != null)
+        {
             healthController.SetHealth(life);
         }
-        if (life <= 0) {
-            //TODO: GAME OVER
+        if (life <= 0)
+        {
             Debug.Log("GAME OVER");
             gameManager.GameOver();
-        } 
+        }
     }
 
     public void RecollectCoin()
@@ -69,4 +79,3 @@ public class PlayerController : MonoBehaviour
         kills++;
     }
 }
-
