@@ -36,6 +36,12 @@ public class Harpoon : Weapon
             Bullet bulletComponent = bullet.GetComponent<Bullet>();
             // bulletComponent.speed = bulletSpeed*direction.normalized.magnitude;
             bulletComponent.damage = damage;
+            bulletComponent.facingDirection = fireDirection;
+
+            // Set the rotation of the bullet to face the direction it's moving
+            float angle = Mathf.Atan2(fireDirection.y, fireDirection.x) * Mathf.Rad2Deg;
+            bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
 
             // Set the next available time for firing
             nextFireTime = Time.time + fireRate;

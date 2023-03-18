@@ -683,9 +683,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1665377339}
     - target: {fileID: -1335627274117880640, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
+      propertyPath: bulletSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1335627274117880640, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 8377146375214695567, guid: 1e3770f6b21e6ad4b9117356da2e30f4, type: 3}
+      objectReference: {fileID: 7601910936246934290, guid: c8c6399ff2180ba42be8a484f229d885, type: 3}
     - target: {fileID: 1496074572293809282, guid: fa633cb3c8fc1a24690bb9ccb631cfe8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -765,7 +769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398045379}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 1.08, z: -2}
+  m_LocalPosition: {x: -0.06, y: 0.33, z: -2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -877,7 +881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4792707253511898219, guid: 633a429228641b348969911ceaa8d287, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 11.590673
+      value: 8.26
       objectReference: {fileID: 0}
     - target: {fileID: 4792707253511898219, guid: 633a429228641b348969911ceaa8d287, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1034,13 +1038,13 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 2
+    height: 2
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1283,7 +1287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 0.25
   firePoint: {fileID: 1398045380}
-  damage: 10
+  damage: 5
   sprite: {fileID: 21300000, guid: 6ad962cfe82bf0e4ea1b760bec57dfb9, type: 3}
   bulletSpeed: 20
   bulletPrefab: {fileID: 8377146375214695567, guid: 1e3770f6b21e6ad4b9117356da2e30f4, type: 3}
@@ -1301,10 +1305,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1
   firePoint: {fileID: 1398045380}
-  damage: 20
+  damage: 40
   sprite: {fileID: 21300000, guid: 6ad962cfe82bf0e4ea1b760bec57dfb9, type: 3}
-  bulletSpeed: 10
-  bulletPrefab: {fileID: 8377146375214695567, guid: 1e3770f6b21e6ad4b9117356da2e30f4, type: 3}
+  bulletSpeed: 15
+  bulletPrefab: {fileID: 7601910936246934290, guid: c8c6399ff2180ba42be8a484f229d885, type: 3}
 --- !u!114 &1858598026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,7 +1540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934567835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0741706, y: 3.1903849, z: -23.059515}
+  m_LocalPosition: {x: -5.11, y: 3.59, z: -23.059515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1638,6 +1642,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5685522718570489850, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
   m_PrefabInstance: {fileID: 2105340237}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2123523896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8848293322564731384, guid: d894c4ce406f10b44a23ff1375ca8129, type: 3}
+  m_PrefabInstance: {fileID: 2105340237}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2123523897
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123523896}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 6ad962cfe82bf0e4ea1b760bec57dfb9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.28, y: 0.37}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &6770928402734126926
 PrefabInstance:
   m_ObjectHideFlags: 0

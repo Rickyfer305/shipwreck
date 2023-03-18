@@ -10,6 +10,10 @@ public class Bullet : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    // The direction this bullet should face when it is created
+    public Vector3 facingDirection;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +22,7 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         transform.position += transform.forward * speed * Time.deltaTime;
         // Debug.Log("Bullet position: " + transform.position);
+
     }
 
     // Handle collisions with other objects
@@ -40,7 +45,7 @@ public class Bullet : MonoBehaviour
         }
         else if (other.tag == "Player")
         {
-            Debug.Log("Player has been shot");
+            //Debug.Log("Player has been shot");
             PlayerController enemy = other.GetComponent<PlayerController>();
             enemy.TakeDamage(damage);
         }
